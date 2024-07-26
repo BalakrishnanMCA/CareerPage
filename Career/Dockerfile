@@ -1,7 +1,7 @@
 FROM openjdk:21-jdk AS builder
 WORKDIR /app
 COPY Career/pom.xml .
-RUN apk add --no-cache maven
+RUN apt update && apt install -y maven
 RUN mvn package -DskipTests
 
 FROM openjdk:21-jdk-slim
