@@ -1,6 +1,6 @@
 FROM openjdk:21-jdk AS builder
 WORKDIR /app
-COPY pom.xml .
+COPY Career/pom.xml .
 RUN apk add --no-cache maven
 RUN mvn package -DskipTests
 
